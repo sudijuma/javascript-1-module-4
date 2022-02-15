@@ -37,3 +37,14 @@ function sorteraNummertvå(number) {
     }
 }
 console.log('kaka', sorteraNummertvå);
+
+
+const minaLottoNummer = [6, 23, 25, 1, 12, 13, 19, 29];
+
+const minaSorteradeLottoNummer = minaLottoNummer.filter(sort);
+function sort(num) {
+    if (num <= 19) {
+        return true;
+    }
+}
+console.log('nya silade lottonumer', minaSorteradeLottoNummer);
