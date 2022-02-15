@@ -38,20 +38,22 @@ renderTeams(teamsToRender);
 // 7. I want to detect that I wrote something(text) inside the input.
 
 search.onkeyup = event => {
-    console.log(event);
-    //8. get the search value or the search keyword the user entered
-    console.log(event.target.value)
     const searchValue = event.target.value.trim().toLowerCase();
-    console.log('searchValue', searchValue);
     const filteredTeams = teamsToRender.filter((team) => {
         //Check if any of the full name porp start with the seachvalue
         if (team.full_name.toLowerCase().startsWith(searchValue)) {
             return true;
         }
     });
-    console.log('filteredTeams', filteredTeams)
-    //Assign the new filtered aray to the old array
-    //teamsToRender = filteredTeams;
-    console.log('teamsToRender', filteredTeams);
     renderTeams(filteredTeams);
 }
+
+/* console.log(event);
+//8. get the search value or the search keyword the user entered
+console.log(event.target.value)
+console.log('searchValue', searchValue);
+
+console.log('filteredTeams', filteredTeams)
+//Assign the new filtered aray to the old array
+//teamsToRender = filteredTeams;
+console.log('teamsToRender', filteredTeams); */
