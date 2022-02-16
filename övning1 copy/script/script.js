@@ -9,6 +9,25 @@ fetch(randomUserUrl)
     .then(function (response) {
         return response.json();
     })
+    .then(function (jasonData) {
+        const results = jasonData.results;
+        for (var i = 0; i < results.length; i++) {
+            const firtsName = results[i].name.first;
+            const lastName = results[i].name.last;
+            const personimg = results[i].picture.large;
+            wrapperDiv.innerHTML += `
+            <h1>${firtsName}, ${lastName}</h1>
+            <img src="${personimg}" title="the name of the person is${firtsName}"/>`
+        }
+    })
+    .catch(function (error) {
+        console.error(error)
+    })
+
+/* fetch(randomUserUrl)
+    .then(function (response) {
+        return response.json();
+    })
     .then(function (jsonData) {
         const results = jsonData.results;
         for (let i = 0; i < results.length; i++) {
@@ -22,4 +41,4 @@ fetch(randomUserUrl)
     })
     .catch(function (error) {
         console.log(error)
-    })
+    }) */
