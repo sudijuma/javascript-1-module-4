@@ -6,12 +6,45 @@ const wrapperDiv = document.querySelector(".wrapper");
 //3. make the api call 
 
 fetch(randomUserUrl)
+    .then(response => {
+        return response.json();
+    })
+    .then((jasonData) => {
+        const minaResultat = jasonData.results;
+        for (let i = 0; i < minaResultat.length; i++) {
+            const firstName = minaResultat[i].name.first;
+            const lastName = minaResultat[i].name.last;
+            const personimg = minaResultat[i].picture.large;
+            wrapperDiv.innerHTML += `<h1>${firstName}, ${lastName}</h1>
+            <img src="${personimg}" title="the name of the person is${firstName}"/>`
+        }
+    })
+    .catch((error) => console.log(error))
+
+
+/* fetch(randomUserUrl)
+    .then((dettaFunkar) => {
+        return dettaFunkar.json();
+    })
+    .then((whatEver) => {
+        const resultatFra = whatEver.results;
+        for (let i = 0; i < resultatFra.length; i++) {
+            const firstName = resultatFra[i].name.first;
+            const lastName = resultatFra[i].name.last;
+            const personimg = resultatFra[i].picture.large;
+            wrapperDiv.innerHTML += `<h1>${firstName}, ${lastName}</h1>
+            <img src="${personimg}" title="the name of the person is${firstName}"/>`;
+        }
+    })
+    .catch((error) => console.log(error)) */
+
+/* fetch(randomUserUrl)
     .then(function (response) {
         return response.json();
     })
     .then(function (jasonData) {
         const results = jasonData.results;
-        for (var i = 0; i < results.length; i++) {
+        for (let i = 0; i < results.length; i++) {
             const firtsName = results[i].name.first;
             const lastName = results[i].name.last;
             const personimg = results[i].picture.large;
@@ -21,8 +54,8 @@ fetch(randomUserUrl)
         }
     })
     .catch(function (error) {
-        console.error(error)
-    })
+        console.log(error)
+    }) */
 
 /* fetch(randomUserUrl)
     .then(function (response) {
