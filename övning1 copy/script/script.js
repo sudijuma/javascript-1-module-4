@@ -20,7 +20,7 @@ fetch(randomUserUrl)
         }
     })
     .catch((error) => console.log(error))
-
+console.log(randomUserUrl);
 
 /* fetch(randomUserUrl)
     .then((dettaFunkar) => {
