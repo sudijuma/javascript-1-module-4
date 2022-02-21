@@ -12,7 +12,7 @@ fetch(randomUserUrl)
     .then((jasonData) => {
         const minaResultat = jasonData.results;
         for (let i = 0; i < minaResultat.length; i++) {
-            const firstName = minaResultat[i].name.first;
+            const firstName = minaResultat[i].location.number;
             const lastName = minaResultat[i].name.last;
             const personimg = minaResultat[i].picture.large;
             wrapperDiv.innerHTML += `<h1>${firstName}, ${lastName}</h1>
