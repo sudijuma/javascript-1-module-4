@@ -11,6 +11,7 @@ fetch(randomUserUrl)
     })
     .then((jasonData) => {
         const minaResultat = jasonData.results;
+        console.log(minaResultat);
         for (let i = 0; i < minaResultat.length; i++) {
             const firstName = minaResultat[i].location.number;
             const lastName = minaResultat[i].name.last;
