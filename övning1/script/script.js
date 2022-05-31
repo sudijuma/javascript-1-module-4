@@ -25,3 +25,13 @@ function logLengthMsg(event){
         //Show message "the input has a value"
     //else
         //Show a message " the input dosent have a value"
+
+const email = document.getElementById("email");
+const form = document.querySelector('.email');
+
+email.addEventListener("sumbit", function(e){
+    e.preventDefault();
+    const emailRegex = /(.+)@(.+){2,}.(.+){2,}/;
+    if (!emailRegex.test(email.value)) {
+    }
+})
